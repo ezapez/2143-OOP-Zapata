@@ -11,16 +11,38 @@
 //       describe program here thoroughly 
 //
 // Usage:
-//       how to use the program if necessary
+//       - $ ./main  main.cpp
+//       - This is the main cpp file being used to run the program
 //
 // Files:
 //      main.cpp : Driver program
 /////////////////////////////////////////////////////////////////////////////////
 
 #include <iostream>
-
 using namespace std;
 
+/**
+ * CircularArrayQue
+ * 
+ * Description:
+ *      Description of your class and what it does
+ * 
+ * Public Methods:
+ *      - A list of 
+ *      - each public method
+ *      - with return types
+ * 
+ * Private Methods:
+ *      - A list of 
+ *      - each private method
+ *      - with return types
+ * 
+ * Usage: 
+ * 
+ *      - examples of how
+ *      - to use your class 
+ *      
+ */
 
 class CircularArrayQue {
 private:
@@ -84,7 +106,6 @@ ostream &operator<<(ostream &os, const CircularArrayQue &other) {
  */
 int main() {
     CircularArrayQue C1(5);
-
     // C1.Push(34);
     // C1.Push(38);
     // C1.Push(44);
