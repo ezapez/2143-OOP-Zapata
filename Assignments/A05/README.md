@@ -33,7 +33,7 @@
 
 ## Composition
 > Basic term is building complex objects from smaller ones 
-> The main idea for use in c++ is to make it more easier and simple to input complex classes in our class.
+> The main use in c++ is to make it more easier and simple to input complex classes in our class.
 
 ## Constructor
 > A Member function that has the same name as the class. Used to initialize values, is automatically executed, but can not house return types or void. We also have a Default constructor which no arguments are passed.
@@ -56,6 +56,51 @@ class student{
 > However they are not member functions, its used for templates.
 
 ## Inheritence
-> 
+> The most important aspect of OOP, inheritence is used to reduce duplactions of methods that the classes will be using. 
+> For example, if we have three classes that are similar and each have the same methods within them. We would want to reduce this to lessen any type of error or confusion so we use inheritence to write one class that will house the methods the other classes will be using.
+
+><img src= https://media.geeksforgeeks.org/wp-content/uploads/inheritance2.png>
+
+## Instance Variables
+> Go along with objects are created when the object is made and destroyed when the object is destroyed. Its decleard within the classes is a non-static variable. 
+
+## Member Variable
+>   a Variable inside a class its used for certain object and can also be used by all the methods within the class
+
+## Method
+> The basic term is its a function that belongs to class it can either be inside or outside
+> is when wanting to be used it put in the main with the class being called in there to. For it to be able to be used. 
 
 
+## Multiple Inheritance
+>  allows a class to get other classes members. It a main feature in c++ they must be place in order for it to work. 
+
+## Object 
+> A can be anything a programmer wants it to be like a chair, car, and can. Its entity that  has 
+> state and behavior. can be any data type that has a function.
+> Example: Car cr1; // object of car
+
+## Overloading
+>Allows you to define the same methods within it each other. You can have a void method that prints out different things, but the complier will chose what is appropriate. 
+
+## Polymorphism
+>  Basic term is to many forms. In c++ its usally happens when many of our class have the same Inheritance  and polymorphism occurs which allows us to do many differnet task with these Multiple Inheritance. 
+><img src= https://miro.medium.com/max/1276/1*cFSJ95jyw-ACiWaIRxAbbg.jpeg>
+
+## Public/Private/Protected
+> all these are used within a class 
+> Public: allows its variables or methods be access directly  
+> Private: hides information that only allows its variables or methods with permisson.
+> you can not access it directly it has to be accessed within the classes or placed into a function
+> that will allow you to use it
+>Protected: while almost the same as Private but only differnece is that its only allowed to be access in the class. Unlike Private which allows to be use outside the class thourgh anohter function linking to it. 
+
+## Static
+> outside class its allocates space ina program. Only gets allcaoted once. Doesn't need to be called mutiple times
+> Inside the class Only need to be called once are shared by objects can not be inside a contructors 
+
+
+
+
+## Virtual
+>  A member function that is declered inside the class it ensure the right function is called for the object. There are rules when using virtual functions cannot be static, needs to be access with pointes or refernece. Can have a dectructor, but no constructor. 
