@@ -268,68 +268,68 @@ class myVector{
         }
         
     /**
-     * Function void pushfront(int  val)
-     *      push  the node to the back of the list
+     * Function void pushfront(myVector &v2)
+     *      adds list from vector 2 to front of vector 1
+     *      my method is wrong since I was unable to push it the front 
+     *      instead it goes to rear with  no only one data from vector 2
      *    
      * 
      * Params:
-     *      if()
-     *        - to make sure no nodes in the list
-     *      else
-     *        -  sends a node in while there is nodes already in list  
+     *      while
+     *        - to set the list to be able to push from the front
      * Returns
-     *      -returns  node to the rear of  the list 
+     *      -suppose to return to the front but does not 
      */
 
 
          void pushFront(myVector &v2)
         {
-          node* nodePtr = v2.tail;
-           while(nodePtr)
+          node* nodePtr = v2.tail;             // set the  nodeptr to vector 2 tail 
+           while(nodePtr)                     // while loop to set the list infront another vecotr
           {
-            pushRear(nodePtr -> data);
-            nodePtr = nodePtr -> prev;
+            pushRear(nodePtr -> data);      // here I am pushing to rear, but this is wrong since it 
+                                           // does not do what wanted to do
+                                          // that being set it to the front 
+            nodePtr = nodePtr -> prev;   // gets node from previous 
           }
 
-          
         }
+
      /**
-     * Function void pushrear(int  val)
-     *      push  the node to the back of the list
+     * Function void pushrear(myVector &v2)
+     *      sets vector 2 or any  to link there list at the rear 
      *    
      * 
      * Params:
-     *      if()
-     *        - to make sure no nodes in the list
-     *      else
-     *        -  sends a node in while there is nodes already in list  
+     *      while(nodePtr!=NULL)
+     *        - make sure the nodeptr is not null to run while loop
      * Returns
-     *      -returns  node to the rear of  the list 
+     *      -returns  vectors nodes to the rear of another vector 
      */
         void pushRear(myVector &v2)
         {
           node* nodePtr = v2.head;
           while(nodePtr!=NULL)
           {
-            pushRear(nodePtr -> data);
-            nodePtr = nodePtr ->next;
-            update_Size++;
+            pushRear(nodePtr -> data);    // pushrear to set linked nodes to the new list
+            nodePtr = nodePtr ->next;     // nodePtr is linking the nodes 
+            update_Size++;                // set new current value 
           }
 
         }
         
     /**
-     * Function void pushrear(int  val)
+     * Function int popFront()
      *      push  the node to the back of the list
      *    
      * 
      * Params:
      *      if()
-     *        - to make sure no nodes in the list
+     *        - to make sure no nodes in the list if so return 0
      *      else
-     *        -  sends a node in while there is nodes already in list  
+     *        -  pops the nodes from the front  
      * Returns
-     *      -returns  node to the rear of  the list 
+     *      -returns  the val pop 
      */
         int popFront()
         {
@@ -338,63 +338,68 @@ class myVector{
             return 0;
           }
           else{
-              int val = head -> data;  
-              node* nodePtr = head;
-              head = head -> next;
-              head -> prev = NULL;
-              delete nodePtr;
-              update_Size--;
-              return val;
+              int val = head -> data;         // set the val of node from the front being pop
+              node* nodePtr = head;          // nodeptr set to head hold old value
+              head = head -> next;          // head goes to the next node
+              head -> prev = NULL;         // goes to previous node to return back the node that was next to the pop node
+              delete nodePtr;             //  we delete node being popped  
+              update_Size--;             // update size
+              return val;               // return data being popped
           }
-          return 0;
+          return 0;                   // return 0; for no errors
         }
 
     /**
-     * Function void pushrear(int  val)
-     *      push  the node to the back of the list
+     * Function int popRear()
+     *      pops  the node to the back of the list
      *    
      * 
      * Params:
      *      if()
-     *        - to make sure no nodes in the list
+     *        - to make sure no empty  list returns 0;
      *      else
-     *        -  sends a node in while there is nodes already in list  
-     * Returns
+     *        -  we are going to pop data from the rear
+     * Returns:
      *      -returns  node to the rear of  the list 
      */
 
         int popRear()
         {
-          if(tail == NULL)
+          if(tail == NULL)                             // no empty list
           {
             return 0;
           }
           else{
-            int val = tail -> data;
-            node* nodePtr = head;
+            int val = tail -> data;                //  getting the data being popped
+
+            node* nodePtr = head;                // setting nodePtr to head 
             
-            while(nodePtr -> next != tail) //traverse the link list 
+            while(nodePtr -> next != tail)      //traverse the link list 
               {
-                nodePtr = nodePtr -> next;  // point the next to the last node  
+                nodePtr = nodePtr -> next;    // point the next to the last node  
               }
 
-            tail = nodePtr;       // tail to equal to nullptr 
-            nodePtr = nodePtr -> next;
-            delete nodePtr;
-            tail -> next = NULL;
-            update_Size--;
+            tail = nodePtr;                 // tail to equal to nullptr 
+            nodePtr = nodePtr -> next;     // push nodePtr to data need to be deleted
+            delete nodePtr;               //   pop data from the  back
+            tail -> next = NULL;         // set the new rear node to nullptr
+            update_Size--;              // updates size
             return val;
           }
           return 0;
         }
+
+
       /**
-     * Function void pushrear(int  val)
-     *      push  the node to the back of the list
+     * Function void pushAt(int loc, int val)
+     *      pushing val to the location 
      *    
      * 
      * Params:
      *      if()
      *        - to make sure no nodes in the list
+     *        - loc is  0 call  pushfront
+     *        - last index call pushrear
      *      else
      *        -  sends a node in while there is nodes already in list  
      * Returns
@@ -402,91 +407,94 @@ class myVector{
      */
 
         void pushAt(int loc, int val){
-              if(loc < 0 ||loc > update_Size ){return;} // return noting 
-              if(loc == 0)
+              if(loc < 0 ||loc > update_Size ){return;}                   // return noting 
+              if(loc == 0)                                              // if loc is zero call pushfront
               {
                 pushFront(val);
-                update_Size++;
+                update_Size++;                                        // update size
               }
-              else if(loc == update_Size)
-              {
-                      pushRear(val);
+              else if(loc == update_Size)                           // if it is the last index  call push rear
+              { 
+                      pushRear(val);                      
                       update_Size++;
               }
-              else{
-                int count_size = 0;
+              else{                                               //  if neither locate where to place the new data
+                int count_size = 0;                              //   keep  count of the node 
 
-                node* nodePtr = head;
-                node* prevnodePtr = nodePtr -> prev;
+                node* nodePtr = head;                           // new nodePtr
+                node* prevnodePtr = nodePtr -> prev;           // setting prevnodeptr to previous node to help link
 
                 while(nodePtr != NULL && count_size != loc-1) //traverse the link list 
                 {
-                  nodePtr = nodePtr -> next;  //   
-                  count_size++;
+                  nodePtr = nodePtr -> next;                //  nodeptr going through the list
+                  count_size++;                            //  update size
                 }
 
-                prevnodePtr = nodePtr;
-                nodePtr = new node(val);
-                nodePtr->next =  prevnodePtr -> next;
-                prevnodePtr -> next = nodePtr;
-                update_Size++;
+                prevnodePtr = nodePtr;                  //  old data being placed in prevnodeptr
+                nodePtr = new node(val);               // new value going into nodeptr
+                nodePtr->next =  prevnodePtr -> next; // linking up the nodes  make sure they go back to the orginal list 
+                prevnodePtr -> next = nodePtr;       // 
+                update_Size++;                      // update size
 
               }
 
         }
 
         /**
-     * Function void pushrear(int  val)
-     *      push  the node to the back of the list
-     *    
+     * Function int popAt(int  loc)
+     *      pops at a location on the linkedlist
      * 
      * Params:
      *      if()
      *        - to make sure no nodes in the list
+     *        - if location zero call push front
+     *        - if location last index call push rear
      *      else
-     *        -  sends a node in while there is nodes already in list  
+     *        -  traverse the list to find the  location need to be popped 
      * Returns
-     *      -returns  node to the rear of  the list 
+     *      -returns  node being pop by location
      */
 
         int popAt(int loc){
-                 if(loc < 0 ||loc >= update_Size ){return 0;} // return noting 
-              if(loc == 0)
-              {
-                popFront();
-                update_Size++;
+                 if(loc < 0 ||loc >= update_Size ){return 0;}                         // return noting 
+              if(loc == 0)                                                           // if the loc is at 0 just call back pushFront to pop it
+              {         
+                popFront();                                                        // popfront being called
+                update_Size++;                                                    // update size
               }
-              else if(loc == update_Size)
+              else if(loc == update_Size)                                       // if the location is the last index call back pushrear to pop it
               {
-                      popRear();
-                      update_Size++;
+                      popRear();                                              // called poprear
+                      update_Size++;                                         //  update size
               }
-              else{
+              else{                                                       // else it will be 
                 int count_size = 0;
 
-                node* nodePtr = head;
-                node* temp = nullptr; 
+                node* nodePtr = head;                                  // new nodePtr 
+                node* temp = nullptr;                                 // adding a temp to be deleted or pop data
 
-                while(nodePtr != NULL && count_size != loc-1) //traverse the link list 
+                while(nodePtr != NULL && count_size != loc-1)       //traverse the link list 
                 {
-                  nodePtr = nodePtr -> next;  //   
-                  count_size++;
+                  nodePtr = nodePtr -> next;                      //  nodeptr going through lis
+                  count_size++;                                  // count the size making sure it pop the one need to pop not after 
+
                 }
-                int track = 0;  // keeps track of where the node being deleted is 
-                temp = nodePtr -> next;
-                track = temp -> data;
-                nodePtr -> next = temp-> next;
-                temp -> next = NULL; 
-                delete temp;
-                update_Size--;
-                return track; 
+                int track = 0;                                // keeps track of where the node being deleted is 
+                temp = nodePtr -> next;                      // node is being pop placed temp
+                track = temp -> data;                       // node beng placed in track to return the node being popped
+                nodePtr -> next = temp-> next;             //  linking the list back
+                temp -> next = NULL;                      // adding node  to nullptr to 
+                delete temp;                             // delete node
+                update_Size--;                          // update size
+                return track;                          // return value that was popped
 
               }
               return 0;
         }
 
 
-        /**
+
+    /**
      * Function find(int val)
      *      finds where the index the number is with in the list
      *    
@@ -501,7 +509,6 @@ class myVector{
      * Returns
      *      -returns  node to the rear of  the list 
      */
-
 
           int find(int val)
           {
