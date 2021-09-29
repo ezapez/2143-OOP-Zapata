@@ -4,7 +4,7 @@
 
 ### My vector class 2 will be using overloading operators to add, subtract, divide, and mutiply 
 ### the vectors. The program will also be overloading << ostream and fstream
-### also be == equailty lastly be assignment =.
+### also be == equailty and lastly be assignment = operators.
 
 
 ### Files 
