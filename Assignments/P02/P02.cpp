@@ -608,6 +608,7 @@ public:
      * Returns:
      *      new list 
      */
+
     myVector operator+(const myVector &other)
     {
         myVector temp;                                                  // make a temp vector
@@ -635,6 +636,7 @@ public:
 
         return temp;                                                    // return new list 
     }
+    
     /**
      * Public : myVector operator-
      * 
@@ -735,7 +737,7 @@ public:
         {
             temp.pushRear(list1->data * other_list2->data);
             list1 = list1->next;
-            other_list2 = list1->next;
+            other_list2 = other_list2->next;
         }
 
         while (list1 != nullptr)
