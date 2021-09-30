@@ -619,7 +619,7 @@ public:
         {       
             temp.pushRear(list1->data + other_list2->data);             // add each list to each other and push the values not add to the rear
             list1 = list1->next;
-            other_list2 = list1->next;
+            other_list2 = other_list2->next;
         }
 
         while (list1 != nullptr)                                        // traveres list 1
@@ -659,7 +659,7 @@ public:
         {
             temp.pushRear(list1->data - other_list2->data);
             list1 = list1->next;
-            other_list2 = list1->next;
+            other_list2 = other_list2->next;
         }
 
         while (list1 != nullptr)
@@ -698,7 +698,7 @@ public:
         {
             temp.pushRear(list1->data / other_list2->data);
             list1 = list1->next;
-            other_list2 = list1->next;
+            other_list2 = other_list2->next;
         }
 
         while (list1 != nullptr)
