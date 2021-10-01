@@ -503,6 +503,7 @@ public:
      * Returns:
      *      returns the data 
      */
+    
     int &operator[](const int index)
     {
         node *find = head;                                              //  sets find to list
@@ -515,6 +516,7 @@ public:
         }
         return find->data;                                              // returns the data in list 
     }
+
     /**
      * Public : myVector &operator =
      * 
@@ -532,8 +534,8 @@ public:
         {
             return *this;                                               // true skip  assignment, and  return  *this
         }
-
-                                                                        //  this is destroying  this
+        
+                                                                //  this is destroying  this
         node *temp = this->head;
         node *destroy = nullptr;                                        // node to be deleted
 
