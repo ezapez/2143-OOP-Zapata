@@ -10,8 +10,8 @@
 ### Files 
 |   #   | File            | Description                                        |
 | :---: | --------------- | -------------------------------------------------- |
-|   1   | P01             | Main driver                                        |
-|   2   | input.dat       | test data to be used in program                    |
+|   1   | <a href ="https://github.com/ezapez/2143-OOP-Zapata/blob/main/Assignments/P01/P01.cpp">P01.cpp</a>        | Main driver                                        |
+|   2   | <a href ="https://github.com/ezapez/2143-OOP-Zapata/blob/main/Assignments/P01/input.dat">input.dat</a>    | test data to be used in program                    |
 
 
 
