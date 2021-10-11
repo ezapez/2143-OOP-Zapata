@@ -10,8 +10,8 @@
 ### Files 
 |   #   | File            | Description                                        |
 | :---: | --------------- | -------------------------------------------------- |
-|   1   | <a href ="https://github.com/ezapez/2143-OOP-Zapata/blob/main/Assignments/P01/P01.cpp">P03A.cpp</a>        | Main driver                                        |
-|   2   | <a href ="https://github.com/ezapez/2143-OOP-Zapata/blob/main/Assignments/P01/input.dat">emoji.h</a>       | emojis being used                  |
+|   1   | <a href ="https://github.com/ezapez/2143-OOP-Zapata/blob/main/Assignments/P03A/main.cpp">P03A.cpp</a>        | Main driver                                        |
+|   2   | <a href ="https://github.com/ezapez/2143-OOP-Zapata/blob/main/Assignments/P03A/emoji.h">emoji.h</a>       | emojis being used                  |
 
 
 
