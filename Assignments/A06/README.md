@@ -28,6 +28,6 @@
 
  - Gets the id number first, then the last name and first name, and finally the classification of the student via public get methods
 
-
+***
 
 ![image](https://github.com/ezapez/2143-OOP-Zapata/blob/main/Assignments/A06/UML.png)
